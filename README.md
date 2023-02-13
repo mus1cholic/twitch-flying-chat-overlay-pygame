@@ -1,4 +1,4 @@
-# Twitch Flying Chat Overlay Pygame v0.4
+# Twitch Flying Chat Overlay Pygame v0.4.1
 
 Insert gif here
 

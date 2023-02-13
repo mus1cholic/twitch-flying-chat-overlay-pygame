@@ -1,0 +1,7 @@
+{
+    "server": "irc.chat.twitch.tv",
+    "port": "6667",
+    "nickname": "bot_listener",
+    "token": "insert_your_token_here",
+    "channel": "#kurumii_osu"
+}

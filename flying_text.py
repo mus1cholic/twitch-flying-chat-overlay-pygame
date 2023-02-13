@@ -2,11 +2,6 @@ import pygame
 import sys
 import random
 
-import asyncio
-import socketio
-
-sio = socketio.AsyncClient()
-
 chat_arr = []
 
 WIDTH = 1600
@@ -28,26 +23,6 @@ def append_text(text, arr):
     y_position = random.randint(0, HEIGHT - 50)
     x_increment = random.randint(13, 17)
     arr.append(Text(text, color, start_time, end_time, y_position, x_increment))
-
-@sio.event
-def connect():
-    print('connection established')
-
-@sio.event
-def disconnect():
-    print('disconnected from server')
-
-@sio.event
-async def data(data):
-    print(f'message received with {data}')
-
-    append_text(data["message"], chat_arr)
-
-async def sio_main():
-    await sio.connect('http://localhost:3001/')
-    print("hi")
-    await sio.wait()
-    print("lol")
 
 def main():
     pygame.init()
@@ -93,7 +68,4 @@ def main():
         fps_clock.tick(target_fps)
 
 if __name__ == '__main__':
-    asyncio.run(sio_main())
-
-    print("help")
-    # main()
+    main()
